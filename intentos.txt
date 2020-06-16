@@ -1,0 +1,10 @@
+1 - Crear una clase llamada Todo para separar el todo de la ventana principal
+
+2 - crear una funcion dentro de la clase MainFrame donde creara cada 
+nuevo todo 
+
+3 - inyectar un evento de MainFrame a Todo
+
+4 - llamar evento desde main
+
+5- create a list of buttons and remove them by index

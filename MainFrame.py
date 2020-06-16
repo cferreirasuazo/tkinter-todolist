@@ -5,6 +5,7 @@ class MainFrame():
     def __init__(self, window):
         self.counter = 0
         self.todos = []
+        self.todos_frames = []
         self.MAX_TASK = 15
         self.title = tk.Label(master=window, text = "Todo-List")
         self.title.pack()
@@ -22,7 +23,13 @@ class MainFrame():
         self.frame.pack()
 
     def catchEvent(self,e):
-        print(e)
+        child = str(e.widget).split(".")[3]
+
+        for i in self.todos_frames:
+            todo = str(i).split(".")[3]
+            if todo == child:
+                i.destroy()
+        
 
     def print_todo(self,e):
         print(e)
@@ -33,14 +40,21 @@ class MainFrame():
         self.todos.append(str)
         if str:
             new_todo = Todo(self.todos_container,str)
+            self.todos_frames.append(new_todo.frame)
+            new_todo.delete_btn.bind("<Button-1>",self.catchEvent)
             new_todo.show_todo()
             self.input.delete("0.0","end")      
+        
+        for i in enumerate(self.todos_frames):
+            print(i)
 
     def appendTodos(self,todos):
         self.todos = [todo.replace("\n","") for todo in todos]
 
         for todo in todos:
             new_todo = Todo(self.todos_container,todo.replace("\n",""))
+            new_todo.delete_btn.bind("<Button-1>",self.catchEvent)
+            self.todos_frames.append(new_todo.frame)
             new_todo.show_todo()
 
        

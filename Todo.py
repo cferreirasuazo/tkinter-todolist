@@ -7,7 +7,7 @@ class Todo():
         self.frame = tk.Frame(master=master)
         self.label = tk.Label(master=self.frame,text=todo_str)
         self.delete_btn = tk.Button(master=self.frame,text="Done")
-        self.delete_btn.bind("<Button-1>",self.delete_todo)
+        #self.delete_btn.bind("<Button-1>",self.delete_todo)
     
     def show_todo(self):
         self.label.grid(row=0)

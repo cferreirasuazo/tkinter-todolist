@@ -15,6 +15,10 @@
 #     new_btn.pack()
 
 
+# Get the parent of a widget
+# parent = event.widget.winfo_parent()
+
+
 todoFile = "todoFile.txt"
 
 
@@ -29,7 +33,6 @@ from MainFrame import MainFrame
 
 main = tk.Tk()
 main.title("TODO-LIST")
-
 mainFrame = MainFrame(main)
 mainFrame.appendTodos(openFile.readlines())
 mainFrame.start()
