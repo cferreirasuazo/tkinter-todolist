@@ -20,10 +20,7 @@
 
 
 todoFile = "todoFile.txt"
-
-
 openFile = open(todoFile,"r")
-
 
 def readFile(todoFile):
     pass
@@ -34,9 +31,7 @@ from MainFrame import MainFrame
 main = tk.Tk()
 main.title("TODO-LIST")
 mainFrame = MainFrame(main)
-mainFrame.appendTodos(openFile.readlines())
-mainFrame.start()
-
+mainFrame.render()
 main.mainloop()
 
 
